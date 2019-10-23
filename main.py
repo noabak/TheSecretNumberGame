@@ -7,7 +7,20 @@ while True:
     selection = input("Would you like to A) play a new game, B) see the best scores, or C) quit?")
 
     if selection.upper() == "A":
-        play_game()
+      valid = True
+      level = input("Please enter the level: H) hard, E) easy:")
+      while valid:
+        if level.lower() == "h":
+          play_game("hard")
+          break
+        elif level.lower() == "e":
+          play_game("easy")
+          break
+        else:
+          print("Invalid caracter!")
+          valid=False
+
+
     elif selection.upper() == "B":
         print(get_top_scores())
         for score_dict in get_top_scores():

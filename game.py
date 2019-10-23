@@ -3,7 +3,7 @@ import json
 import datetime
 
 
-def play_game():
+def play_game(level="easy"):
 
  secret= random.randint(1,5)
  guess=0
@@ -35,13 +35,14 @@ def play_game():
       score_file.write(b)
     break
 
-  elif guess>secret:
+  elif guess>secret and level=="easy":
     list_wrong_guesses.append(guess)
-    print("Try something smaller")
-  elif guess<secret:
+    print("Your guess is not correct... Try something smaller")
+  elif guess<secret and level=="easy":
     list_wrong_guesses.append(guess)
-    print("Try something bigger")
+    print("Your guess is not correct... Try something bigger")
 
+#get the 3 top scores
 def get_top_scores():
     with open("score_list.txt", "r") as score_file:
         a = score_file.read()
@@ -49,3 +50,4 @@ def get_top_scores():
         # SORT LIST PER ATTEMPTS
         sorted_list = sorted(score_list, key=lambda k: k['attempts'])
         return sorted_list[:3]
+
