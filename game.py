@@ -14,8 +14,6 @@ def play_game(level="easy"):
  with open("score_list.txt","r") as score_file:
   a=score_file.read()
   score_list = json.loads(a)
-  # PRINT ONLY THE FIRST THREE ELEMENTS
-  #print("Top score:" + str(score_list[:3]))
 
  while guess!=secret:
   guess = int(input("Please enter a number:"))
@@ -42,12 +40,17 @@ def play_game(level="easy"):
     list_wrong_guesses.append(guess)
     print("Your guess is not correct... Try something bigger")
 
-#get the 3 top scores
-def get_top_scores():
-    with open("score_list.txt", "r") as score_file:
+# get all scores
+def get_score_list(filename):
+    with open(filename, "r") as score_file:
         a = score_file.read()
         score_list = json.loads(a)
-        # SORT LIST PER ATTEMPTS
-        sorted_list = sorted(score_list, key=lambda k: k['attempts'])
-        return sorted_list[:3]
+    return score_list
+
+#get the 3 top scores
+def get_top_scores(filename):
+   score_list = get_score_list(filename)
+   # SORT LIST PER ATTEMPTS
+   sorted_list = sorted(score_list, key=lambda k: k['attempts'])
+   return sorted_list[:3]
 

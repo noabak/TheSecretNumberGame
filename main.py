@@ -22,8 +22,8 @@ while True:
 
 
     elif selection.upper() == "B":
-        print(get_top_scores())
-        for score_dict in get_top_scores():
+        print(get_top_scores("score_list.txt"))
+        for score_dict in get_top_scores("score_list.txt"):
             print(str(score_dict["attempts"]) + " attempts, date: " + score_dict.get("date"))
     else:
         print("BYE!")

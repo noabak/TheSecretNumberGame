@@ -1,1 +1,1 @@
-[]
+[{"Player name": "noa", "Secret number": 5, "attempts": 1, "date": "2019-11-04 20:13:49.686154", "List wrong guesses": []}, {"Player name": "lola", "Secret number": 2, "attempts": 3, "date": "2019-11-04 20:23:00.146626", "List wrong guesses": []}, {"Player name": "luis", "Secret number": 5, "attempts": 4, "date": "2019-11-10 21:15:19.770872", "List wrong guesses": [2, 3, 4]}, {"Player name": "jony", "Secret number": 5, "attempts": 3, "date": "2019-11-10 21:15:37.054010", "List wrong guesses": []}]
